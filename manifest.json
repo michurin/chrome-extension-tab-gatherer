@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Tab gatherer",
+  "short_name": "Tab gatherer",
+  "version": "1.0.0",
+  "permissions": ["tabs"],
+  "description": "Extension groups tabs for you automatically based on their domain and your current tabs",
+  "author": "a.michurin@gmail.com",
+  "homepage_url": "https://michurin.github.io/",
+  "minimum_chrome_version": "88",
+  "background": {"service_worker": "background.js"}
+}
