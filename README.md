@@ -8,5 +8,7 @@ Groups are based on domains and trying to take into account your current groups 
 - [must have] Icons in manifest
 - `homepage_url` in manifest
 - [must have] Publish (while you can try it in deveoper mode)
+- [nice to have] Setup eslint
+- [nice to have] Setup CI
 - Extending logic of grouping (?)
 - Saving state (?) saving preferences (domains? groups names? colors?)
