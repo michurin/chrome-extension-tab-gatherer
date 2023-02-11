@@ -3,11 +3,10 @@ async function move(tabId, tabUpdate, activeInfo) {
     return;
   }
   const url = new URL(tabUpdate.url);
-  if (!url.protocol.startsWith('http')) {
+  if (!url.protocol.startsWith('http')) { // both http and https
     return;
   }
   const { host } = url;
-  console.log(tabId, tabUpdate, activeInfo);
   const allInWindow = await chrome.tabs.query({ windowId: activeInfo.windowId });
   const locator = {};
   const similar = [tabId];
