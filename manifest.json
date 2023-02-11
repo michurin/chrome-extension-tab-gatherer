@@ -4,9 +4,14 @@
   "short_name": "Tab gatherer",
   "version": "1.0.0",
   "permissions": ["tabs"],
-  "description": "Extension groups tabs for you automatically based on their domain and your current tabs",
+  "description": "Chrome extension to group tabs automatically based on their domain and your current tabs",
   "author": "a.michurin@gmail.com",
-  "homepage_url": "https://michurin.github.io/",
+  "homepage_url": "https://github.com/michurin/chrome-extension-tab-gatherer",
   "minimum_chrome_version": "88",
-  "background": {"service_worker": "background.js"}
+  "background": {"service_worker": "background.js"},
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  }
 }
