@@ -1,9 +1,12 @@
 function canonicalName(h) {
   // TODO has to be testes carefully: empty names, different number of parts...
+  // reddit -> rdt
+  // google -> gl
+  // amazon -> amzn
   const p = h.split('.');
   if (p.length > 1) {
     const d = p[p.length - 2].toLowerCase();
-    return (d.substring(0, 1) + d.substring(1).replace(/[^bcdfghjklmnpqrstvwxz]/g, '')) || d || h; // remove vowels
+    return (d.substring(0, 1) + d.substring(1).replace(/[^bcdfghjklmnpqrstvwxz]/g, '')).replace(/(.)\1+/g, '$1') || d || h; // remove vowels, and repeated chars
   }
   return h; // TODO consider this fallback
 }
