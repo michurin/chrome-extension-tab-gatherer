@@ -1,3 +1,13 @@
+function canonicalName(h) {
+  // TODO has to be testes carefully: empty names, different number of parts...
+  const p = h.split('.');
+  if (p.length > 1) {
+    const d = p[p.length - 2].toLowerCase();
+    return (d.substring(0, 1) + d.substring(1).replace(/[^bcdfghjklmnpqrstvwxz]/g, '')) || d || h; // remove vowels
+  }
+  return h; // TODO consider this fallback
+}
+
 async function move(tabId, tabUpdate, activeInfo) {
   if (!tabUpdate.url) {
     return;
@@ -34,8 +44,14 @@ async function move(tabId, tabUpdate, activeInfo) {
   if (targetGroup !== undefined) {
     await chrome.tabs.group({ groupId: targetGroup, tabIds: [tabId] });
   } else if (similar.length > 1) {
-    await chrome.tabs.group({ tabIds: similar }); // TODO setup group?
+    const newGroupId = await chrome.tabs.group({ tabIds: similar });
+    chrome.tabGroups.update(newGroupId, { title: canonicalName(host) }); // tabGroups required
   }
 }
 
+function create(tab) {
+  chrome.tabs.ungroup(tab.id); // TODO make it setupable
+}
+
 chrome.tabs.onUpdated.addListener(move);
+chrome.tabs.onCreated.addListener(create);

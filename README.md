@@ -13,6 +13,10 @@ Groups are based on domains and trying to take into account your current groups 
     - turn on/off grouping `chrome://` tabs
     - turn on/off grouping `file://` tabs
     - turn on/off minimum group size: remove groups smaller then N tabs automatically
+    - options for autosplitting mixed groups (does it really useful?)
+    - options for autoungroup new tabs
+  - autonaming goups (+tabGroups permission)
+    - consider ways to abbreviate domains
 - [must have] Publish (while you can try it in deveoper mode)
 - [nice to have] Setup eslint
 - [nice to have] Setup CI
