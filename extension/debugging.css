@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+}
+
+pre {
+  padding: 1em;
+  border: 1px solid #000;
+}
+
+p.red {
+  background-color: #800;
+  color: #fff;
+  padding: 1em;
+}
