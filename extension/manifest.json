@@ -2,13 +2,17 @@
   "manifest_version": 3,
   "name": "Tab gatherer",
   "short_name": "Tab gatherer",
-  "version": "0.0.1",
-  "permissions": ["tabs", "tabGroups"],
+  "version": "0.1.0",
+  "permissions": ["tabs", "tabGroups", "storage"],
   "description": "The Google Chrome extension groups tabs automatically. Groups are based on tabs domain names.",
   "author": "a.michurin@gmail.com",
   "homepage_url": "https://github.com/michurin/chrome-extension-tab-gatherer",
-  "minimum_chrome_version": "88",
+  "minimum_chrome_version": "90",
   "background": {"service_worker": "background.js"},
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
   "icons": {
     "16": "icons/16.png",
     "48": "icons/48.png",

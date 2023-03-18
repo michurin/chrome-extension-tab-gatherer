@@ -19,6 +19,6 @@ then
 fi
 
 echo "Going to archive..."
-zip -r "$pubfile" . -i '*.js' -i '*.json' -i '*.png'
+zip -r "$pubfile" . -i '*.js' -i '*.json' -i '*.png' -i '*.css' -i '*.html'
 
 echo "Done. OK"
