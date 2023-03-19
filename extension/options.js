@@ -23,14 +23,7 @@ function close(tr, k) {
   return x;
 }
 
-async function init() {
-  const naming = await chrome.storage.local.get(null);
-
-  const table = document.createElement('table');
-  const head = document.createElement('tr');
-  head.append(th(''), th('Domain'), th('Abbr'), th('Color'));
-  table.append(head);
-
+function tableOfCustomNames(naming) {
   const rows = Object.keys(naming).map((k) => {
     if (!k.startsWith('D')) {
       return false;
@@ -44,6 +37,10 @@ async function init() {
     };
   }).filter((x) => x);
 
+  if (rows.length === 0) {
+    return element('p', '(no custom names)');
+  }
+
   rows.sort((a, b) => {
     if (a.title < b.title) { return -1; }
     if (a.title > b.title) { return 1; }
@@ -52,13 +49,23 @@ async function init() {
     return 0;
   });
 
+  const table = document.createElement('table');
+  const head = document.createElement('tr');
+  head.append(th(''), th('Domain'), th('Abbr'), th('Color'));
+  table.append(head);
   rows.forEach((x) => {
     const tr = document.createElement('tr');
     tr.append(close(tr, x.key), td(x.domain), td(x.title), td(x.color));
     table.append(tr);
   });
+  return table;
+}
 
-  document.body.insertBefore(table, document.getElementsByTagName('script')[0]);
+async function init() {
+  document.getElementById('ungroup').onclick = async () => {
+    (await chrome.tabs.query({})).forEach((x) => chrome.tabs.ungroup(x.id));
+  };
+  document.body.insertBefore(tableOfCustomNames(await chrome.storage.local.get(null)), document.getElementById('custom_names').nextSibling);
 }
 
 init();
