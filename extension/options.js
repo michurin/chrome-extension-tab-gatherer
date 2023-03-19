@@ -31,12 +31,30 @@ async function init() {
   head.append(th(''), th('Domain'), th('Abbr'), th('Color'));
   table.append(head);
 
-  Object.keys(naming).forEach((k) => {
+  const rows = Object.keys(naming).map((k) => {
     if (!k.startsWith('D')) {
-      return;
+      return false;
     }
+    const v = naming[k];
+    return {
+      key: k,
+      domain: k.substring(1),
+      title: v.title,
+      color: v.color,
+    };
+  }).filter((x) => x);
+
+  rows.sort((a, b) => {
+    if (a.title < b.title) { return -1; }
+    if (a.title > b.title) { return 1; }
+    if (a.domain < b.domain) { return -1; }
+    if (a.domain > b.domain) { return 1; }
+    return 0;
+  });
+
+  rows.forEach((x) => {
     const tr = document.createElement('tr');
-    tr.append(close(tr, k), td(k.substring(1)), td(naming[k].title), td(naming[k].color));
+    tr.append(close(tr, x.key), td(x.domain), td(x.title), td(x.color));
     table.append(tr);
   });
 

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Tab gatherer",
   "short_name": "Tab gatherer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "permissions": ["tabs", "tabGroups", "storage"],
   "description": "The Google Chrome extension groups tabs automatically. Groups are based on tabs domain names.",
   "author": "a.michurin@gmail.com",

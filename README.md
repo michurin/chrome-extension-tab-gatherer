@@ -25,7 +25,7 @@ If you found typos, ugly phrases... you suggestions are welcome with appreciatio
 - ~~`homepage_url` in manifest~~
 - ~~[nice to have] Options page.~~ Microroadmap:
   - ~~list of customizations~~
-    - order
+    - ~~order~~
     - clickable lines, click opens group for further management
   - thinks don't required extra permissions:
     - turn on/off instant grouping: create new group even for single new tab
