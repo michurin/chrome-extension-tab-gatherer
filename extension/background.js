@@ -1,5 +1,10 @@
 // storage
 
+// keys in storage have prefixes to have a kind of namespaces
+// D - users customization of domain-group_name relations
+// S - suggested names, this part of storage helps to manage tabGroups.events.
+// N - counter to produce default colors
+
 async function storageSet(prefix, d, val) {
   const k = prefix + d;
   const v = {};
@@ -138,7 +143,7 @@ async function onUpdated(tabId, tabUpdate, activeInfo) {
 
 async function onCreated(tab) {
   // TODO it seems, there is no races onCreated and onUpdated,
-  // however, it will be nice to check tab.url and if it is not empty, find target group as if this tab was ungrouped and group/ungoup
+  // however, it will be nice to check tab.url and if it is not empty, find target group as if this tab was ungrouped and group/ungroup
   await chrome.tabs.ungroup(tab.id); // TODO make it setupable: ungroup every tab, ungroup some hosts, do not ungroup...
 }
 
@@ -175,7 +180,7 @@ async function onGroupUpdated(group) {
 }
 
 function onGroupRemoved(group) {
-  delete suggestRemove(group.id); // cleanup; just to avoid autoGroupSettings leaking
+  suggestRemove(group.id); // cleanup; just to avoid autoGroupSettings leaking
 }
 
 chrome.tabs.onUpdated.addListener(onUpdated);
