@@ -17,7 +17,7 @@ If your are going to do total refactoring, please discuss it first.
 
 However, if you do not want to dig JS, it will be great to see you ideas and issues.
 
-If you found typos, ugly phrases... you suggestions are welcome with appreciation.
+If you found typos, ugly icons, texts... your suggestions are welcome with appreciation.
 
 ### Todos / ideas / issues
 
@@ -45,7 +45,7 @@ If you found typos, ugly phrases... you suggestions are welcome with appreciatio
 - ~~[must have] Publish (while you can try it in developer mode)~~
 - [nice to have] Setup eslint
 - [nice to have] Setup CI
-- [nice to have] Comments in code. At least related to working with persistent storage
+- ~~[nice to have] Comments in code. At least related to working with persistent storage~~
 - ~~[nice to have] Saving state (?) saving preferences (domains? groups names? colors?)~~
 - [nice to have] \[partially done] Unit testing
 - [nice to have] Consider case when user is moving tab from window to window
