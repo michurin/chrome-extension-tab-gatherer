@@ -54,3 +54,4 @@ If you found typos, ugly icons, texts... your suggestions are welcome with appre
 - [minor issue] Strange behavior when you drag group itself to tear whole group off. It seems, Chrome consider it as a new group, but won't notify extension about initial group disappearance. Must be investigated
 - [minor issue] Users report about strange behavior in [Yandex browser](https://browser.yandex.com/). It looks like groups appear, tabs stick together, however groups don't show up in GUI
 - ~~[nice to have] Debugging page: full dump of `storage.local`, `runtime.lasterror`, list of tabs (tabID, host, groupID, windowID), manifest and chrome version info~~
+- [nice to have] Include last events log onto debugging page
