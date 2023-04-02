@@ -14,7 +14,7 @@ jobs:
         run: |
           node --version
           npm --version
-      - name: Test:
+      - name: Test
         run: ci/test.sh
-      - name: Lint:
+      - name: Lint
         run: ci/lint.sh
