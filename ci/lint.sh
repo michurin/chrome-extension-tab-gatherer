@@ -6,4 +6,4 @@ cd "$(dirname "$0")"
 cd lint
 
 test -d node_modules || npm install
-npx eslint ../../extension/*.js ../../testing/*.js
+npx eslint --no-eslintrc --config ./eslintrc.js ../../extension/*.js ../../testing/*.js
