@@ -1,3 +1,5 @@
+/* eslint max-len: ["error", { "code": 120, "ignoreComments": true }] */
+
 // storage
 
 // keys in storage have prefixes to have a kind of namespaces
@@ -22,10 +24,10 @@ async function storageGet(prefix, d) {
 }
 
 async function domainSet(d, title, color) { await storageSet('D', d, { title, color }); }
-async function domainGet(d) { return await storageGet('D', d); }
+async function domainGet(d) { return await storageGet('D', d); } // eslint-disable-line no-return-await
 
 async function suggestSet(k, title, color) { await storageSet('S', k, { title, color }); }
-async function suggestGet(k) { return await storageGet('S', k); }
+async function suggestGet(k) { return await storageGet('S', k); } // eslint-disable-line no-return-await
 async function suggestRemove(k) { await chrome.storage.local.remove(`S${k}`); }
 
 async function countIncr() {

@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check environment (system nodejs)
+        run: |
+          node --version
+          npm --version
+      - name: Test
+        run: ci/test.sh
+      - name: Lint
+        run: ci/lint.sh

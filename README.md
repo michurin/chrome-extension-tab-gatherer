@@ -1,5 +1,7 @@
 # Tab gatherer
 
+[![CI](https://github.com/michurin/chrome-extension-tab-gatherer/actions/workflows/ci.yml/badge.svg)](https://github.com/michurin/chrome-extension-tab-gatherer/actions/workflows/ci.yml)
+
 Google chrome extension that groups tabs for you automatically.
 Groups are based on domains and trying to take into account your current groups of tabs.
 
@@ -43,8 +45,8 @@ If you found typos, ugly icons, texts... your suggestions are welcome with appre
     - Themes on options page `@media (prefers-color-scheme: dark)`
 - [nice to have] Recognize IPs
 - ~~[must have] Publish (while you can try it in developer mode)~~
-- [nice to have] Setup eslint
-- [nice to have] Setup CI
+- ~~[nice to have] Setup eslint~~
+- ~~[nice to have] Setup CI~~
 - ~~[nice to have] Comments in code. At least related to working with persistent storage~~
 - ~~[nice to have] Saving state (?) saving preferences (domains? groups names? colors?)~~
 - [nice to have] \[partially done] Unit testing

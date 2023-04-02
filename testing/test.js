@@ -30,6 +30,8 @@ const global = {
 
 vm.runInNewContext(code, global);
 
+function print(...a) { console.log(...a); } // eslint-disable-line no-console
+
 // ----------------- tests -----------------
 
 async function main() { // wrapper for async calls
@@ -57,7 +59,7 @@ async function main() { // wrapper for async calls
   }))).filter((x) => x);
 
   if (fails.length) {
-    fails.forEach((m) => { console.log(`FAIL: ${m}`); });
+    fails.forEach((m) => { print(`FAIL: ${m}`); });
     process.exit(1);
   }
 
@@ -66,7 +68,7 @@ async function main() { // wrapper for async calls
   // console.log(global.chrome.tabs.onUpdated.f)
   // etc
 
-  console.log('OK');
+  print('OK');
 }
 
 main();
