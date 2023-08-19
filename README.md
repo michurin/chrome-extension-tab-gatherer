@@ -29,7 +29,7 @@ If you found typos, ugly icons, texts... your suggestions are welcome with appre
   - ~~list of customizations~~
     - ~~order~~
     - clickable lines, click opens group for further management
-  - thinks don't required extra permissions:
+  - things don't required extra permissions:
     - turn on/off instant grouping: create new group even for single new tab
     - turn on/off grouping `chrome://` tabs
     - turn on/off grouping `file://` tabs
@@ -42,7 +42,7 @@ If you found typos, ugly icons, texts... your suggestions are welcome with appre
     - make autogrouping turnable
     - consider different ways to abbreviate domains
   - UI
-    - Themes on options page `@media (prefers-color-scheme: dark)`
+    - ~~Themes on options page `@media (prefers-color-scheme: dark)`~~
 - [nice to have] Recognize IPs
 - ~~[must have] Publish (while you can try it in developer mode)~~
 - ~~[nice to have] Setup eslint~~
